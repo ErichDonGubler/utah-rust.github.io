@@ -17,5 +17,3 @@ data:
     video: https://www.youtube.com/embed/UloeOWq6yso?start=4655&end=5548
   meetup: https://www.meetup.com/utahrust/events/251816575/
 ---
-
-Shoutout to InsideSales.com for hosting us!

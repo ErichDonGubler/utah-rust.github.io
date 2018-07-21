@@ -8,6 +8,11 @@
     <div>
       <h2>{{ page.title }}</h2>
       <h3>{{ page.description }}</h3>
+      <h2>Where:
+      {% if page.host %}
+      <a href="{{ site.data.hosts[page.host].google_maps_url }}">{{ site.data.hosts[page.host].location_name }}</a>
+      {% endif %}
+      </h2>
       {% if page.published_date %}
       <h2>When: {{ page.published_date }} {% if page.data.meetup %}<a href="{{ page.data.meetup }}">RSVP!</a>{% endif %}</h2>
       {% endif %}
@@ -16,6 +21,10 @@
       <p>{{ item.title }} by {{ item.presenter }} {% if item.slides %}<a href="{{item.slides}}">slides</a>{% endif %} {% if item.video %}<a href="{{item.video}}">video</a>{% endif %}</p>
       {% endfor %}
       {{ page.content }}
+
+      {% if page.host %}
+      <p>Shoutout to {{ site.data.hosts[page.host].short_name }} for hosting us!</p>
+      {% endif %}
     </div>
   </body>
 </html>
